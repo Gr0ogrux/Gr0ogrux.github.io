@@ -1,0 +1,37 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+@media (min-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 2fr; 
+        grid-template-areas: 
+            "header header"
+            "summary summary"
+            "sidebar work"
+            "sidebar projects";
+        gap: 30px;
+        align-items: start;
+    }
+
+    .header { grid-area: header; }
+    
+    .summary-section { grid-area: summary; } 
+    .work-section { 
+        border-left: 1px solid #ddd; 
+        padding-left: 20px;
+        grid-area: work; }
+    .sidebar-group { grid-area: sidebar; }
+    .projects-section { grid-area: projects; } 
+}
